@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My_IAECOM - L'Innovation IA pour vos Publicités</title>
+    <link rel="icon" href="favicon.ico" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ <!-- Favicon ajouté -->
+
+    <style>
+                    /* Global Styles */
+                body {
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    margin: 0;
+                    padding: 0;
+                    background-color: #f0f2f5;
+                    color: #333;
+                }
+
+                /* Header */
+                header {
+                    background-color: #2a3f54;
+                    color: #fff;
+                    padding: 20px 0;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    position: relative;
+                }
+
+                header h1 {
+                    margin-left: 20px;
+                    font-size: 2em;
+                }
+
+                .nav-links {
+                    margin-right: 20px;
+                    display: flex;
+                    align-items: center;
+                }
+
+                .nav-links a {
+                    color: #fff;
+                    margin-left: 20px;
+                    text-decoration: none;
+                    font-size: 1.1em;
+                }
+
+                .nav-links a:hover {
+                    color: #ffcc00;
+                }
+
+                /* Container */
+                .container {
+                    width: 90%;
+                    max-width: 1200px;
+                    margin: 0 auto;
+                }
+
+                /* Section Intro */
+                .intro {
+                    background-image: url('fond.webp'); /* Image d'en-tête fictive */
+                    background-size: cover;
+                    background-position: center;
+                    color: #fff;
+                    padding: 60px 20px;
+                    text-align: center;
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+                    position: relative;
+                }
+
+                /* Texte dans la section intro */
+                .intro h1 {
+                    font-size: 3em;
+                    margin-bottom: 10px;
+                    word-wrap: break-word;  /* Permet au texte de se couper en plusieurs lignes */
+                    word-break: break-word; /* Assure que les mots longs se cassent si nécessaire */
+                    hyphens: auto;  /* Gère les césures automatiquement */
+                    max-width: 100%; /* Empêche le texte de déborder sur l'écran */
+                    padding: 0 10px; /* Donne de l'espace autour du texte */
+                }
+
+                /* Adaptation pour les écrans de moins de 768px */
+                @media (max-width: 768px) {
+                    .intro h1 {
+                        font-size: 2em;  /* Réduit la taille du texte pour l'adapter mieux à l'écran */
+                        padding: 0 20px; /* Espace supplémentaire pour éviter que le texte touche les bords */
+                    }
+                }
+
+
+                .intro-overlay {
+                    background-color: rgba(0, 0, 0, 0.5);
+                    padding: 40px 20px;
+                    position: relative;
+                    z-index: 1;
+                }
+
+                .intro h1 {
+                    font-size: 3em;
+                    margin-bottom: 10px;
+                }
+
+                .intro p {
+                    font-size: 1.2em;
+                    line-height: 1.8;
+                }
+
+                /* Section */
+                section {
+                    margin: 40px 0;
+                    padding: 20px;
+                    background-color: #fff;
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                    border-radius: 10px;
+                }
+
+                h2 {
+                    color: #2a3f54;
+                    margin-bottom: 20px;
+                }
+
+                .ai-list {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 20px;
+                    justify-content: space-between;
+                }
+
+                .ai-card {
+                    background-color: #fff;
+                    border: 1px solid #e1e1e1;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    width: calc(50% - 20px);
+                    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+                    transition: box-shadow 0.3s;
+                }
+
+                .ai-card:hover {
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+                }
+
+                .ai-card img {
+                    width: 100%;
+                    height: 200px;
+                    object-fit: cover;
+                }
+
+                .ai-card-content {
+                    padding: 20px;
+                }
+
+                .ai-card-content h3 {
+                    margin: 0 0 10px;
+                    color: #5bc0de; /* Titres des IA en bleu clair */
+                }
+
+                .ai-card-content p {
+                    font-size: 0.95em;
+                    color: #555;
+                }
+
+                /* Footer */
+                footer {
+                    background-color: #2a3f54;
+                    color: #fff;
+                    text-align: center;
+                    padding: 20px 0;
+                    margin-top: 40px;
+                }
+
+                .sources {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-top: 20px;
+                }
+
+                .sources div {
+                    display: flex;
+                    align-items: center;
+                }
+
+                .sources div img {
+                    width: 24px;
+                    height: 24px;
+                    margin-right: 10px;
+                }
+
+                .trust-icons img {
+                    width: 40px;
+                    height: 40px;
+                    margin: 0 10px;
+                }
+
+                /* Cookies Section */
+                .cookies-notice {
+                    background-color: #333;
+                    color: #fff;
+                    padding: 15px;
+                    text-align: center;
+                    position: fixed;
+                    bottom: 0;
+                    width: 100%;
+                    z-index: 1000;
+                }
+
+                .cookies-notice p {
+                    margin: 0;
+                }
+
+                .cookies-notice a {
+                    color: #ffcc00;
+                    text-decoration: none;
+                }
+
+                .cookies-notice button {
+                    background-color: #007bff;
+                    border: none;
+                    padding: 10px 20px;
+                    color: #fff;
+                    margin-top: 10px;
+                    cursor: pointer;
+                    border-radius: 5px;
+                }
+
+                .cookies-notice button:hover {
+                    background-color: #0056b3;
+                }
+
+                /* Formulaire Contact */
+                form {
+                    background-color: #fff;
+                    padding: 20px;
+                    border-radius: 10px;
+                    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+                    width: 100%;
+                    max-width: 600px;
+                    margin: 0 auto;
+                }
+
+                /* Adaptation pour les écrans de moins de 768px (Mobile) */
+                @media (max-width: 768px) {
+                    form {
+                        padding: 15px;  /* Réduit le padding pour plus de place */
+                        width: 90%;  /* Limite la largeur à 90% de l'écran */
+                        margin: 10px;  /* Ajoute une petite marge pour éviter que le formulaire touche les bords */
+                    }
+
+                    form input, form textarea, form button {
+                        padding: 12px;
+                    }
+                }
+
+
+                form input, form textarea, form button {
+                    width: 100%;
+                    padding: 12px;
+                    margin: 10px 0;
+                    border-radius: 5px;
+                    border: 1px solid #ddd;
+                }
+
+                form button {
+                    background-color: #28a745;
+                    color: #fff;
+                    border: none;
+                    cursor: pointer;
+                }
+
+                form button:hover {
+                    background-color: #218838;
+                }
+
+                /* Menu mobile */
+                .hamburger-menu {
+                    display: none;
+                    cursor: pointer;
+                    font-size: 2em;
+                    color: #fff;
+                }
+
+                .nav-links {
+                    display: flex;
+                    align-items: center;
+                }
+
+                .nav-links a {
+                    color: #fff;
+                    margin-left: 20px;
+                    text-decoration: none;
+                    font-size: 1.1em;
+                }
+
+                /* Lorsqu'on clique sur le menu mobile */
+                .nav-links.active {
+                    display: block;
+                    position: absolute;
+                    top: 60px;  /* Juste en dessous de l'en-tête */
+                    left: 0;
+                    width: 100%;
+                    background-color: #2a3f54;
+                    padding: 10px 0;
+                    text-align: center;
+                }
+
+                /* Adaptation pour les écrans de moins de 768px */
+                @media (max-width: 768px) {
+                    header {
+                        flex-direction: column;
+                        align-items: flex-start;
+                    }
+
+                    .hamburger-menu {
+                        display: block;
+                    }
+
+                    .nav-links {
+                        display: none;
+                        width: 100%;
+                        justify-content: center;
+                    }
+
+                    .nav-links a {
+                        margin: 10px 0;
+                    }
+
+                    .nav-links.active {
+                        display: block;
+                        position: absolute;
+                        top: 60px;  /* Juste sous l'en-tête */
+                        left: 0;
+                        width: 100%;
+                        background-color: #2a3f54;
+                        padding: 10px 0;
+                        text-align: center;
+                    }
+
+                    .ai-card {
+                        width: 100%;
+                    }
+                }
+
+</style>
+
+</head>
+<body>
+    <header>
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+        <!-- Left-aligned Site Name -->
+        <h1 style="flex: 1; margin-left: 20px;">My_IAECOM</h1>
+        
+        <!-- Hamburger Menu -->
+        <div class="hamburger-menu" onclick="toggleMenu()">&#9776;</div>
+
+        <!-- Right-aligned Navigation Links -->
+        <div class="nav-links" id="mobileMenu">
+            <a href="#home" style="margin-left: 20px;">Accueil</a>
+            <a href="#contact" style="margin-left: 20px;">Contact</a>
+        </div>
+    </div>
+</header>
+
+    <section class="intro">
+        <div class="intro-overlay">
+            <div class="container">
+                <h1>L'Avancée Révolutionnaire des IA</h1>
+                <p>Une startup innovante qui repousse les limites de l'IA pour révolutionner le e-commerce et automatiser vos publicités sans effort.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>Découvrez Nos IA Innovantes</h2>
+            <div class="ai-list">
+                <!-- IA Cards with Titles in Blue Light -->
+                <div class="ai-card">
+                    <img src="ai1.png" alt="IA HyperAd">
+                    <div class="ai-card-content">
+                        <h3>HyperAd Genesis</h3>
+                        <p>HyperAd Genesis analyse les performances des publicités et ajuste automatiquement les campagnes pour maximiser leur portée et leur retour sur investissement.</p>
+                    </div>
+                </div>
+                <div class="ai-card">
+                    <img src="ai2.png" alt="IA AstroPromo">
+                    <div class="ai-card-content">
+                        <h3>AstroPromo AI</h3>
+                        <p>AstroPromo AI aide à prédire les tendances du marché et ajuste vos publicités pour atteindre la bonne audience au bon moment, maximisant ainsi l'impact des campagnes.</p>
+                    </div>
+                </div>
+                <div class="ai-card">
+                    <img src="ai3.png" alt="IA SmartMarket">
+                    <div class="ai-card-content">
+                        <h3>SmartMarket AI</h3>
+                        <p>SmartMarket AI optimise les campagnes en identifiant les canaux les plus efficaces pour chaque type de produit, réduisant ainsi les coûts et augmentant les ventes.</p>
+                    </div>
+                </div>
+                <div class="ai-card">
+                    <img src="ai4.png" alt="IA AdMaster">
+                    <div class="ai-card-content">
+                        <h3>AdMaster X</h3>
+                        <p>AdMaster X améliore la performance des publicités en analysant les comportements d'achat et en ajustant les campagnes pour attirer les clients les plus engagés.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contactez-nous pour en profiter</h2>
+            <form action="#" method="POST">
+                <label for="name">Nom</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 My_IAECOM. Tous droits réservés.</p>
+            <div class="sources">
+                <div>
+                    <img src='1.svg' alt="Logo IA">
+                    <p>Source IA : <strong>Tech AI Journal</strong></p>
+                </div>
+                <div class="trust-icons">
+                    <img src="c2.svg" alt="Certifié">
+                    <img src="c3.svg" alt="Sécurisé">
+                    <img src="c1.svg" alt="Fiable">
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+    // Fonction pour afficher/masquer le menu mobile
+    function toggleMenu() {
+        var menu = document.getElementById("mobileMenu");
+        menu.classList.toggle("active"); // Ajoute ou supprime la classe 'active' pour afficher/masquer le menu
+    }
+
+    // Ferme le menu après avoir cliqué sur un lien
+    const links = document.querySelectorAll('.nav-links a'); // Sélectionne tous les liens de navigation
+    links.forEach(link => {
+        link.addEventListener('click', () => {  // Ajoute un événement de clic sur chaque lien
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.remove('active'); // Retire la classe 'active' pour fermer le menu
+        });
+    });
+</script>
+
+
+</body>
+</html>
